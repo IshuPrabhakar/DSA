@@ -6,14 +6,15 @@ category: Jekyll
 layout: post
 ---
 
-# Notes
 
-## Make decision tree first
+## This to remember while soloving these questions
+- Always first make decision tree.
+- First solve in notebook then code.
 
 ### 1. Letter Combination of a phone number
 - First make general backtracking solution
 - make a new recursive funtion pass all the necessary paramaters:- resultant list, input array, list to strore current combination, index
-```
+```yaml
  // base case
         if(curr.length() == digits.length()){
             // At this point we have generated all the combinations/subsequences so add it to the result
@@ -33,9 +34,9 @@ layout: post
             curr.deleteCharAt(curr.length()-1); // this is backtracking step
             // since we are generating all the possible combination so we need to clear
             // the current output so that next combination can be generated
-        }
-        
+        }  
 ```
+
 - In this Question there is number which represent letter int it Ex 2 => abc, 3 => def
 - So we have to loop through these character one by one as well to make combinations
 - and make recursive call as well Do update index accordingly
@@ -44,7 +45,7 @@ layout: post
 ### 2. Subsets
 - This is also known as Power Set
 - generate all the subsets of the given array
-```
+```yaml
  // Base case
         if(index >= nums.size()){
             res.add(new ArrayList(temp));
@@ -59,12 +60,12 @@ layout: post
         power(nums, res, index + 1, temp); // this call is without the picked element
 ```
 
-
 ### 3. Subsets II
 - This is the follow up of previous question that may contain duplicates
 - Step 1: Sort the array - to arrange duplicate in order i.e next to each other
 - Skipping all the duplicates if we had skipped first element
-```
+
+```yaml
         while(index + 1 != nums.length && nums[index] == nums[index + 1]) index++;
 ```
 
@@ -76,7 +77,7 @@ layout: post
 - 1) with uisng same approch by picking an element one by one and store in temporary list
 - 2) by Swapping the elements with first position i.e at first position we have 3 choice according to the input 
 - array length then swap elements one by one and make recursive call to do rest of the task
-```
+```yaml
  public void permutation(int[] nums, List<List<Integer>> ans, int index){
         
         // Base case 
@@ -106,7 +107,7 @@ layout: post
 - same Question with addition that it may contain duplicates
 - To solve this problem check if the element is picked before or not
 - if picked then do not pick
-```
+```yaml
  private void backtrack(int[] nums, List<List<Integer>> res, int index){
         // Here we will make use of another data structure that will keep check of the duplicate element
         // if duplicate found we would simply skip that recursive call
@@ -136,7 +137,7 @@ layout: post
 - store the diagonal pattern by row - column and row + column and column value since we will be traversing from left to right column wise.
 - create char array to store the queen and mark positon as well if cannot place queen there skip that column.
 
-```
+```yaml
  // Base case
         if(row == n){
             result.add(new ArrayList<>(currentCombination));
@@ -181,7 +182,7 @@ layout: post
 - first search the first charcter with help of loop the search for next with the help of recursion
 - Search in all four direction that is make recursive call on all four direction
 - Don't use the same charcter twice mark visited characters
-```
+```yaml
 // if index reaches at the end that means we have found the word
         if(index == word.length())
             return true;
