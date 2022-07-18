@@ -1,6 +1,6 @@
 ---
 layout: home
-title: DSA DataStructure and algorithms
+title: Data structure and algorithms
 permalink: /
 ---
 
