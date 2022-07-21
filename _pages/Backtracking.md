@@ -14,7 +14,7 @@ layout: post
 ### 1. Letter Combination of a phone number
 - First make general backtracking solution
 - make a new recursive funtion pass all the necessary paramaters:- resultant list, input array, list to strore current combination, index
-```yaml
+```java
  // base case
         if(curr.length() == digits.length()){
             // At this point we have generated all the combinations/subsequences so add it to the result
